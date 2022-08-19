@@ -1,0 +1,45 @@
+{
+  "name": "linters",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "yarn lint -- --fix",
+    "format": "prettier --write ./**/*.{js,jsx}",
+    "svgr": "svgr src/icons -d src/components/icons --replace-attr-values \"#fff=currentColor\" --svgo-config .svgorc.json",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "yarn format",
+      "yarn lint",
+      "yarn lint:fix"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@svgr/cli": "5.5.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
+  }
+}
