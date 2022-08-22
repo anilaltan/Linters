@@ -7,7 +7,7 @@ export function Button({ primary, children, ...props }) {
     <button
       type="button"
       className={cn('btn', {
-        [styles.primary]: primary,
+        [styles.primary]: primary
       })}
       {...props}
     >

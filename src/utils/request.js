@@ -3,7 +3,7 @@ import axios from 'axios'
 import { API_URL, isDev } from '@/constants'
 
 const client = axios.create({
-  baseURL: API_URL,
+  baseURL: API_URL
 })
 
 export const request = (options) => {
